@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-   "node": "7"
+    "node": "7"
   },
   "scripts": {
     "lint": "eslint .",
@@ -17,7 +17,9 @@
     "coverage": "better-npm-run spec && npm run check-coverage",
     "spec:watch": "better-npm-run spec:watch",
     "test": "npm run lint && npm run spec && npm run check-coverage && npm run e2e",
-    "check-coverage": "babel-istanbul check-coverage --statement 80 --branch 80 --function 80"
+    "check-coverage": "babel-istanbul check-coverage --statement 80 --branch 80 --function 80",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "betterScripts": {
     "dev": {
@@ -89,7 +91,8 @@
     "express-wrap-async": "^1.0.2",
     "http-errors": "^1.5.0",
     "joi": "^10.0.6",
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -103,5 +106,6 @@
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
     "supertest": "^2.0.0"
-  }
+  },
+  "snyk": true
 }
